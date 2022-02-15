@@ -1,0 +1,22 @@
+{
+  "name": "jest-another-rpg",
+  "version": "1.0.0",
+  "description": "RPG GAME",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EsteMaeLeo/leo-jest-another-RPG.git"
+  },
+  "author": "Leonel Morales",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EsteMaeLeo/leo-jest-another-RPG/issues"
+  },
+  "homepage": "https://github.com/EsteMaeLeo/leo-jest-another-RPG#readme",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  }
+}
