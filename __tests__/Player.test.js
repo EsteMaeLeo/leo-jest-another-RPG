@@ -40,6 +40,36 @@ test('gets inventory from player or returns false', () =>{
     expect(player.getInventory()).toEqual(false);
 });
 
+test("get player's health value", () => {
+
+    const player = new Player('Dave');
+
+    expect(player.getHealth()).toEqual(expect.stringContaining(player.health.toString()));
+});
+
+test('check if player is alive or nor', () =>{
+    const player = new Player('Dave');
+
+    expect(player.isAlive()).toBeTruthy();
+
+    player.health = 0;
+
+    expect(player.isAlive()).toBeFalsy();
+})
+
+test('substract from player health', () => {
+    const player = new Player('Dave');
+    const oldHealth = player.health;
+
+    player.reduceHealth(5);
+
+    expect(player.health).toBe(oldHealth - 5);
+
+    player.reduceHealth(99999);
+
+    expect(player.health).toBe(0);
+})
+
 // jest.mock('../lib/Potion');
 // console.log(new Potion());
 
