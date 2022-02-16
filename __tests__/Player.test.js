@@ -68,7 +68,39 @@ test('substract from player health', () => {
     player.reduceHealth(99999);
 
     expect(player.health).toBe(0);
-})
+});
+
+test('gets player attack value', () => {
+
+    const player = new Player('Dave');
+
+    player.strength = 10;
+
+    expect(player.getAttackValue()).toBeGreaterThanOrEqual(5);
+    expect(player.getAttackValue()).toBeLessThanOrEqual(15);
+});
+
+test('adds potion to the inventory', () => {
+
+    const player = new Player('Dave');
+    const oldCount =  player.inventory.length;
+    console.log(player);
+    player.addPotion(new Potion());
+
+    expect(player.inventory.length).toBeGreaterThanOrEqual(oldCount);
+    console.log(player);
+});
+
+test('uses a potion from inventory', () => {
+
+    const player = new Player('Dave');
+    player.inventory = [new Potion(), new Potion(),new Potion()];
+    const oldCount = player.inventory.length;
+    console.log(oldCount);
+
+    player.usePotion(1);
+    expect(player.inventory.length).toBeLessThan(oldCount);
+});
 
 // jest.mock('../lib/Potion');
 // console.log(new Potion());
